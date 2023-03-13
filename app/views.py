@@ -5,8 +5,12 @@ Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file contains the routes for your application.
 """
 
-from app import app
-from flask import render_template, request, redirect, url_for
+from app import app, db
+from flask import render_template, request, redirect, url_for, flash,send_from_directory
+from werkzeug.utils import secure_filename
+from app.forms import Newproperty
+from app.models import Properties
+import os
 
 
 ###
@@ -23,6 +27,40 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
+
+@app.route('/properties/create',methods=['POST','GET'])
+def create_properties():
+    """For displaying the form to add a new property"""
+    form=Newproperty()
+    if request.method == 'POST' :
+        if form.validate_on_submit():
+            image = form.image.data 
+            filename = secure_filename(image.filename)
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            create_properties=Properties(title=form.title.data, num_of_bedrooms=form.num_of_bedrooms.data,num_of_bathrooms=form.num_of_bathrooms.data,type_place=form.type_place.data,location=form.location.data,price=form.price.data,description=form.description.data,photo=filename)
+            db.session.add(create_properties)
+            db.session.commit()
+            flash('Property Saved', 'success')
+            return redirect(url_for('properties'))
+        else:
+            flash_errors(form)
+    return render_template('newProperty.html',form=form) 
+
+@app.route('/properties')
+def properties():
+    return render_template('properties.html', properties = Properties.query.all() )
+
+@app.route('/property/<propertyid>')
+def get_property(propertyid):
+    property_id = Properties.query.filter_by(id=propertyid).first()
+    return render_template('property.html', property=property_id)
+
+
+@app.route('/properties/<filename>')
+def get_image(filename):
+    rootdir = os.getcwd()
+    return send_from_directory(os.path.join(rootdir,app.config['UPLOAD_FOLDER']), filename)
+
 
 
 ###
