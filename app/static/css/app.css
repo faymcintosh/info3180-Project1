@@ -1,3 +1,158 @@
 body {
     padding-top: 5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
+
+textarea{
+    height: 120px;
+}
+
+.descrip,.price,.type_place,.pty-title,.locats{
+    margin-bottom: 20px;
+
+}
+.properties-container{
+    display: grid;
+    gap:50px;
+    justify-content:center;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+   
+}
+.locat-point{
+    
+    height: 30px;
+    margin-left: -10px;
+    width: 30px;
+}
+.price{
+    font-size: 16px;
+    color:white;
+    background-color: #5ba4fa;
+    width:110px;
+    text-align: center;
+    text-justify: center;
+    border-radius: 20px;
+    height: 30px;
+    margin-top: 10px;
+
+
+
+}
+.top-pty{
+    display: flex;
+    gap: 12px;
+    padding-top: 10px;
+
+
+}
+.type_place{
+        border-radius: 20px;
+        color:white;
+        text-align: center;
+        background-color: rgb(251,192,31);
+        text-justify: center;
+        font-size: 16px;
+        width:110px;
+        height: 30px;
+        margin-top: 10px;
+
+    
+}
+.property-pty{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 10px;
+    width: 100%;
+    height: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+}
+.property-img img{
+  width:100%;
+  height: 100%;
+}
+.property-body{
+    margin: auto;
+    padding-left: 30px;
+    width:100%;
+    padding-right: 30px;
+    margin-top: 50px;
+
+
+}
+
+
+.locats{
+    display:inline-block;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    padding-left:5px;
+    font-size: 14px;
+
+
+
+}
+#locats2 {
+    margin-bottom: 10px;
+
+
+ }
+
+
+
+
+.descrip{
+    padding-top: 10px;;
+    margin-top: 10px;
+
+}
+.pty{
+    display:flex;
+    gap: 10px;
+
+}
+  
+#p-pty{
+    width: 400px;
+    height: 440px;
+}
+
+.pty-img-top{
+    width: 398px;
+    height: 250px;
+}
+
+.view-link{
+    border-radius:0px 0px 3px 3px;
+    text-align: center;
+    margin-top: 20px;
+    color:white;
+    background-color: #14b6a6;
+    padding: 10px;
+    width:400px;
+    height:200px;
+    font-size: 14px;
+    
+}
+
+.p{
+    margin-left: 20px;
+}
+
+.bg-success{ 
+    background-color: #14b6a6;
+} 
+
+.navbar-custom {
+
+    background-color: #14b6a6 !important;
+}
+
+nav img{
+    height: 40px;
+    width:40px;
+    padding: 5px;
 }

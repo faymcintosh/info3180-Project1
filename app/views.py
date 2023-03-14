@@ -31,10 +31,10 @@ def about():
 @app.route('/properties/create',methods=['POST','GET'])
 def create_properties():
     """For displaying the form to add a new property"""
-    form=Newproperty()
+    create_properties_form= PropertyForm()
     if request.method == 'POST' :
         if form.validate_on_submit():
-            image = form.image.data 
+            image =  create_properties_form.image.data 
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             create_properties=Properties(title=form.title.data, num_of_bedrooms=form.num_of_bedrooms.data,num_of_bathrooms=form.num_of_bathrooms.data,type_place=form.type_place.data,location=form.location.data,price=form.price.data,description=form.description.data,photo=filename)
@@ -44,7 +44,7 @@ def create_properties():
             return redirect(url_for('properties'))
         else:
             flash_errors(form)
-    return render_template('newProperty.html',form=form) 
+    return render_template('Newproperty.html',form=create_properties_form) 
 
 @app.route('/properties')
 def properties():

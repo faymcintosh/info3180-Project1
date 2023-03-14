@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div  class="pty" >
+    <div class="property-pty">
+        <div class="property-img">
+            <img src="{{ url_for('get_image',filename=property.photo)}}" class="pty-img"  />
+        </div>
+        
+        <div class="property-body">
+            <h3 class="pty-title">{{property.title}}</h3>
+        <div class="top-pty">
+            <div class="price">{{property.price}}</div>
+            <div class="type_place">{{property.type_place}}</div>
+        </div>
+        <div class="descrip">
+          <p class="pty-text">{{property.description}}</p>
+        </div>
+        <div class="locats">
+            <img  src= "{{ url_for('static', filename='img/bedroom-wooden-accent-wall-9KdgK5zqKcz9ukcu6xy1Hx-c1217ee14b1b43e0ae82ec2046743af5.jpg)}}" class="locat-point" alt="image of bedroom"/>
+            {{property.num_of_bedrooms}} Bedrooms
+        </div>
+        <div class="locats" >
+            <img src="/static/img/martha-mulholland-standard-architecture-malibu-house-094-edit-1647617137.jpg" class="locat-point">
+            {{property.num_of_bathrooms}} Bathrooms
+        </div>
+        <br/>
+        <div class="locats" id="b">
+            <img src="/static/img/location.png" class="locat-point">
+            {{property.location}}
+        </div>
+        <br/>
+
+        
+       <button class="btn btn-success">Email Realtor</button>
+    
+    </div>
+   
+
+</div>
+    
+{% endblock %}
