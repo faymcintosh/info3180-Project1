@@ -30,7 +30,7 @@ textarea{
     font-size: 16px;
     color:white;
     background-color: #5ba4fa;
-    width:110px;
+    width:112px;
     text-align: center;
     text-justify: center;
     border-radius: 20px;
@@ -54,7 +54,7 @@ textarea{
         background-color: rgb(251,192,31);
         text-justify: center;
         font-size: 16px;
-        width:110px;
+        width:112px;
         height: 30px;
         margin-top: 10px;
 
@@ -79,7 +79,7 @@ textarea{
     padding-left: 30px;
     width:100%;
     padding-right: 30px;
-    margin-top: 50px;
+    margin-top: 53px;
 
 
 }
@@ -120,7 +120,7 @@ textarea{
     height: 440px;
 }
 
-.pty-img-top{
+.pty-img-img{
     width: 398px;
     height: 250px;
 }
@@ -132,7 +132,7 @@ textarea{
     color:white;
     background-color: #14b6a6;
     padding: 10px;
-    width:400px;
+    width:410px;
     height:200px;
     font-size: 14px;
     
@@ -142,17 +142,15 @@ textarea{
     margin-left: 20px;
 }
 
-.bg-success{ 
-    background-color: #14b6a6;
-} 
+
 
 .navbar-custom {
 
-    background-color: #14b6a6 !important;
+    background-color: #14b6a6;
 }
 
 nav img{
-    height: 40px;
-    width:40px;
+    height: 45px;
+    width:45px;
     padding: 5px;
 }

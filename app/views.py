@@ -37,7 +37,8 @@ def create_properties():
             image =  create_properties_form.image.data 
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            create_properties=Properties(title=form.title.data, num_of_bedrooms=form.num_of_bedrooms.data,num_of_bathrooms=form.num_of_bathrooms.data,type_place=form.type_place.data,location=form.location.data,price=form.price.data,description=form.description.data,photo=filename)
+            create_properties=Properties(title=form.title.data, num_of_bedrooms=form.num_of_bedrooms.data,num_of_bathrooms=form.num_of_bathrooms.data,type_place=form.type_place.data,location=form.location.data,price=form.price.data
+            ,description=form.description.data,photo=filename)
             db.session.add(create_properties)
             db.session.commit()
             flash('Property Saved', 'success')

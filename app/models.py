@@ -15,9 +15,9 @@ class Properties(db.Model):
     num_of_bathrooms = db.Column(db.Integer)
     location = db.Column(db.String(80))
     price= db.Column(db.Float)
-    description= db.Column(db.String(320))
+    description= db.Column(db.String(340))
     type_place= db.Column(db.String(50))
-    photo= db.Column(db.String(250))
+    photo= db.Column(db.String(270))
 
     def  __init__(self, title, num_of_bedrooms, num_of_bathrooms, location, price, description, type_place, photo):
         self.title= title

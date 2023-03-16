@@ -6,7 +6,7 @@
 <div class="properties-container">
     {% for property in properties %}
             <div class="pty" id="p-pty">
-                <img src="{{ url_for('get_image',filename=property.photo)}}" class="pty-img-top"  />
+                <img src="{{ url_for('get_image',filename=property.photo)}}" class="pty-img-img"  />
                 <div class="p">
                     <h5 class="pty-title">{{property.title}}</h5>
                     <div class="locats" id="locats2">
